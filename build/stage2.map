@@ -1,0 +1,117 @@
+Archive member included to satisfy reference by file (symbol)
+
+/usr/lib/gcc/x86_64-linux-gnu/12/32/libgcc.a(_udivdi3.o)
+                              build/stage2/c/stdio.o (__udivdi3)
+/usr/lib/gcc/x86_64-linux-gnu/12/32/libgcc.a(_umoddi3.o)
+                              build/stage2/c/stdio.o (__umoddi3)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD build/stage2/asm/main.o
+LOAD build/stage2/asm/x86.o
+LOAD build/stage2/c/disk.o
+LOAD build/stage2/c/main.o
+LOAD build/stage2/c/stdio.o
+LOAD /usr/lib/gcc/x86_64-linux-gnu/12/32/libgcc.a
+                0x00000500                        phys = 0x500
+                0x00000500                        . = phys
+
+.entry          0x00000500       0xc8
+                0x00000500                        __entry_start = .
+ *(.entry)
+ .entry         0x00000500       0xc8 build/stage2/asm/main.o
+                0x00000500                entry
+
+.text           0x000005d0      0xa6f
+                0x000005d0                        __text_start = .
+ *(.text)
+ .text          0x000005d0       0xc3 build/stage2/asm/x86.o
+                0x000005d0                x86_Disk_GetDriveParams
+ .text          0x00000693       0x73 build/stage2/c/disk.o
+                0x00000693                disk_init
+ .text          0x00000706       0x4c build/stage2/c/main.o
+                0x00000706                cstart
+ .text          0x00000752      0x68b build/stage2/c/stdio.o
+                0x00000771                putcharPos
+                0x000007bb                setcrs
+                0x00000824                putc
+                0x00000911                puts
+                0x00000940                printf_unsigned
+                0x000009e8                printf_signed
+                0x00000a45                vprintf
+                0x00000d54                printf
+                0x00000d75                clrscr
+ *fill*         0x00000ddd        0x3 
+ .text          0x00000de0      0x11a /usr/lib/gcc/x86_64-linux-gnu/12/32/libgcc.a(_udivdi3.o)
+                0x00000de0                __udivdi3
+ *fill*         0x00000efa        0x6 
+ .text          0x00000f00      0x13f /usr/lib/gcc/x86_64-linux-gnu/12/32/libgcc.a(_umoddi3.o)
+                0x00000f00                __umoddi3
+
+.data           0x00001040        0x4
+                0x00001040                        __data_start = .
+ *(.data)
+ .data          0x00001040        0x0 build/stage2/asm/main.o
+ .data          0x00001040        0x0 build/stage2/c/disk.o
+ .data          0x00001040        0x0 build/stage2/c/main.o
+ .data          0x00001040        0x4 build/stage2/c/stdio.o
+                0x00001040                ScreenBuffer
+ .data          0x00001044        0x0 /usr/lib/gcc/x86_64-linux-gnu/12/32/libgcc.a(_udivdi3.o)
+ .data          0x00001044        0x0 /usr/lib/gcc/x86_64-linux-gnu/12/32/libgcc.a(_umoddi3.o)
+
+.rodata         0x00001044       0xdc
+                0x00001044                        __rodata_start = .
+ *(.rodata)
+ .rodata        0x00001044       0x30 build/stage2/c/main.o
+ .rodata        0x00001074       0xac build/stage2/c/stdio.o
+                0x00001074                g_HexChars
+
+.eh_frame       0x00001120      0x2ec
+ .eh_frame      0x00001120       0x38 build/stage2/c/disk.o
+ .eh_frame      0x00001158       0x34 build/stage2/c/main.o
+ .eh_frame      0x0000118c      0x160 build/stage2/c/stdio.o
+ .eh_frame      0x000012ec       0x84 /usr/lib/gcc/x86_64-linux-gnu/12/32/libgcc.a(_udivdi3.o)
+ .eh_frame      0x00001370       0x9c /usr/lib/gcc/x86_64-linux-gnu/12/32/libgcc.a(_umoddi3.o)
+
+.note.gnu.property
+                0x0000140c       0x38
+ .note.gnu.property
+                0x0000140c       0x1c /usr/lib/gcc/x86_64-linux-gnu/12/32/libgcc.a(_udivdi3.o)
+ .note.gnu.property
+                0x00001428       0x1c /usr/lib/gcc/x86_64-linux-gnu/12/32/libgcc.a(_umoddi3.o)
+
+.bss            0x00001444        0x8
+                0x00001444                        __bss_start = .
+ *(.bss)
+ .bss           0x00001444        0x0 build/stage2/c/disk.o
+ .bss           0x00001444        0x0 build/stage2/c/main.o
+ .bss           0x00001444        0x8 build/stage2/c/stdio.o
+                0x00001444                ScreenX
+                0x00001448                ScreenY
+ .bss           0x0000144c        0x0 /usr/lib/gcc/x86_64-linux-gnu/12/32/libgcc.a(_udivdi3.o)
+ .bss           0x0000144c        0x0 /usr/lib/gcc/x86_64-linux-gnu/12/32/libgcc.a(_umoddi3.o)
+                0x0000144c                        __end = .
+OUTPUT(build/stage2.bin binary)
+
+.comment        0x00000000       0x60
+ .comment       0x00000000       0x20 build/stage2/c/disk.o
+ .comment       0x00000020       0x20 build/stage2/c/main.o
+ .comment       0x00000040       0x20 build/stage2/c/stdio.o
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 build/stage2/c/disk.o
+ .note.GNU-stack
+                0x00000000        0x0 build/stage2/c/main.o
+ .note.GNU-stack
+                0x00000000        0x0 build/stage2/c/stdio.o
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/12/32/libgcc.a(_udivdi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/12/32/libgcc.a(_umoddi3.o)

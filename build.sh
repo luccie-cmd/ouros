@@ -1,2 +1,3 @@
+make -B always
 make -B iso
-qemu-system-i386 build/os.iso
+qemu-system-i386 -hda build/os.iso

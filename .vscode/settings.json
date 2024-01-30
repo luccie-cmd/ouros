@@ -1,0 +1,31 @@
+{
+    "files.associations": {
+        "*.h": "cpp",
+        "stdint.h": "c",
+        "stdalign.h": "c",
+        "stdio.h": "c",
+        "stdarg.h": "c",
+        "cstdint": "c",
+        "*.inc": "c",
+        "hash_map": "c",
+        "hash_set": "c",
+        "deque": "c",
+        "forward_list": "c",
+        "list": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "unordered_set": "c",
+        "vector": "c",
+        "internet": "c",
+        "io_context": "c",
+        "string_view": "c",
+        "rope": "c",
+        "slist": "c",
+        "array": "c",
+        "ranges": "c",
+        "span": "c",
+        "valarray": "c",
+        "regex": "c",
+        "initializer_list": "c"
+    }
+}
